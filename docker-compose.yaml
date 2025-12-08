@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  message-service:
+    build: .
+    image: message-service:latest
+    container_name: message-service
+    environment:
+      - SPRING_RABBITMQ_HOST=YOUR_RABBIT_HOST
+      - SPRING_RABBITMQ_USERNAME=admin
+      - SPRING_RABBITMQ_PASSWORD=admin
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/worker:/tmp/worker
+    restart: always
