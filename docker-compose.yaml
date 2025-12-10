@@ -6,7 +6,7 @@ services:
     container_name: message-service
     environment:
       # These environment variables are automatically mapped by Spring Boot
-      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_HOST: 141.148.196.163
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: admin
       SPRING_RABBITMQ_PASSWORD: admin
