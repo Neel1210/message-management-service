@@ -2,16 +2,10 @@ version: '3.8'
 services:
   message-service:
     build: .
-    image: message-service:latest
-    container_name: message-service
-    environment:
-      # These environment variables are automatically mapped by Spring Boot
-      SPRING_RABBITMQ_HOST: 141.148.196.163
-      SPRING_RABBITMQ_PORT: 5672
-      SPRING_RABBITMQ_USERNAME: admin
-      SPRING_RABBITMQ_PASSWORD: admin
+    image: sandbox-message-management:latest
+    container_name: sandbox-message-management
     ports:
-      - "8081"        # host:container (change as per your app port)
+      - "8081:8081"        # host:container (change as per your app port)
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/worker:/tmp/worker
